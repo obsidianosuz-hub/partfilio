@@ -68,8 +68,8 @@ export default function GymDemoPage() {
                             )}
 
                             {googleFlowStep === 1 && (
-                                <form onSubmit={handleGoogleEmailSubmit} className="w-full animate-fade-in text-left">
-                                    <div className="bg-white rounded-md p-6 shadow-xl relative">
+                                <form onSubmit={handleGoogleEmailSubmit} className="w-full max-w-sm mx-auto animate-fade-in text-left">
+                                    <div className="bg-white rounded-md p-6 sm:p-8 shadow-xl relative">
                                         <div className="flex justify-center mb-4">
                                             <svg className="w-10 h-10" viewBox="0 0 48 48">
                                                 <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.7 17.74 9.5 24 9.5z"></path>
@@ -89,7 +89,7 @@ export default function GymDemoPage() {
                                                 type="email" 
                                                 required
                                                 placeholder="Email yoki telefon"
-                                                className={`w-full px-4 py-3 bg-white border ${emailError ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20' : 'border-gray-300 focus:border-blue-500 focus:ring-blue-500/20'} rounded-sm text-gray-900 text-md focus:outline-none focus:ring-4 transition-all`} 
+                                                className={`w-full px-4 py-3 bg-white border ${emailError ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20' : 'border-gray-300 focus:border-blue-500 focus:ring-blue-500/20'} rounded-sm text-gray-900 text-md focus:outline-none focus:ring-2 transition-all`} 
                                             />
                                         </div>
                                         {emailError && (
@@ -112,7 +112,7 @@ export default function GymDemoPage() {
                             )}
 
                             {googleFlowStep === 2 && (
-                                <div className="w-full bg-white rounded-md p-8 shadow-xl flex flex-col items-center justify-center animate-fade-in min-h-[250px]">
+                                <div className="w-full max-w-sm mx-auto bg-white rounded-md p-8 shadow-xl flex flex-col items-center justify-center animate-fade-in min-h-[250px]">
                                     <div className="w-12 h-12 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mb-4"></div>
                                     <p className="text-gray-700 font-medium text-lg text-center">Google bilan bog'lanmoqda...</p>
                                     <p className="text-gray-500 text-sm text-center mt-2">Tasdiqlanmoqda: {guestEmail}</p>
