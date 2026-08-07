@@ -68,8 +68,8 @@ export default function GymDemoPage() {
                             )}
 
                             {googleFlowStep === 1 && (
-                                <form onSubmit={handleGoogleEmailSubmit} className="w-full max-w-sm mx-auto animate-fade-in text-left">
-                                    <div className="bg-white rounded-md p-6 sm:p-8 shadow-xl relative">
+                                <form onSubmit={handleGoogleEmailSubmit} className="w-full animate-fade-in text-left">
+                                    <div className="bg-white rounded-md p-6 shadow-xl relative">
                                         <div className="flex justify-center mb-4">
                                             <svg className="w-10 h-10" viewBox="0 0 48 48">
                                                 <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.7 17.74 9.5 24 9.5z"></path>
@@ -81,7 +81,7 @@ export default function GymDemoPage() {
                                         <h3 className="text-center text-xl text-gray-900 mb-1">Kirish</h3>
                                         <p className="text-center text-sm text-gray-600 mb-6">Google hisobingizdan foydalaning</p>
                                         
-                                        <div className="relative mb-2">
+                                        <div className="relative mb-2 flex justify-center">
                                             <input 
                                                 autoFocus
                                                 value={guestEmail}
@@ -89,17 +89,17 @@ export default function GymDemoPage() {
                                                 type="email" 
                                                 required
                                                 placeholder="Email yoki telefon"
-                                                className={`w-full px-4 py-3 bg-white border ${emailError ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20' : 'border-gray-300 focus:border-blue-500 focus:ring-blue-500/20'} rounded-sm text-gray-900 text-md focus:outline-none focus:ring-2 transition-all`} 
+                                                className={`w-3/4 px-4 py-3 bg-white border ${emailError ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20' : 'border-gray-300 focus:border-blue-500 focus:ring-blue-500/20'} rounded-sm text-gray-900 text-md focus:outline-none focus:ring-2 transition-all`} 
                                             />
                                         </div>
                                         {emailError && (
-                                            <p className="text-red-600 text-xs mt-1 mb-4 flex items-center gap-1">
+                                            <p className="text-red-600 text-xs mt-1 mb-4 flex justify-center gap-1">
                                                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd"></path></svg>
                                                 {emailError}
                                             </p>
                                         )}
 
-                                        <div className="mt-8 flex justify-between items-center">
+                                        <div className="mt-8 flex justify-between items-center px-6">
                                             <button type="button" onClick={() => setGoogleFlowStep(0)} className="text-blue-600 hover:bg-blue-50 px-2 py-1.5 rounded-sm text-sm font-medium transition-colors">
                                                 Orqaga
                                             </button>
@@ -112,7 +112,7 @@ export default function GymDemoPage() {
                             )}
 
                             {googleFlowStep === 2 && (
-                                <div className="w-full max-w-sm mx-auto bg-white rounded-md p-8 shadow-xl flex flex-col items-center justify-center animate-fade-in min-h-[250px]">
+                                <div className="w-full bg-white rounded-md p-8 shadow-xl flex flex-col items-center justify-center animate-fade-in min-h-[250px]">
                                     <div className="w-12 h-12 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mb-4"></div>
                                     <p className="text-gray-700 font-medium text-lg text-center">Google bilan bog'lanmoqda...</p>
                                     <p className="text-gray-500 text-sm text-center mt-2">Tasdiqlanmoqda: {guestEmail}</p>
