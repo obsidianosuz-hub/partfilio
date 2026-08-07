@@ -6,11 +6,15 @@ import { Link } from '@/i18n/routing';
 export default function GymDemoPage() {
     const [activeTab, setActiveTab] = useState('Bosh Sahifa');
     const [isGated, setIsGated] = useState(true);
-    const [guestName, setGuestName] = useState('');
+    const [googleFlowStep, setGoogleFlowStep] = useState(0); // 0: button, 1: enter email, 2: connecting
     const [guestEmail, setGuestEmail] = useState('');
     const [emailError, setEmailError] = useState('');
 
-    const unlockDemo = (e: React.FormEvent) => {
+    const startGoogleAuth = () => {
+        setGoogleFlowStep(1);
+    };
+
+    const handleGoogleEmailSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         setEmailError('');
         
@@ -18,13 +22,16 @@ export default function GymDemoPage() {
         const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/i;
         
         if (!guestEmail.match(gmailRegex)) {
-            setEmailError("Faqat haqiqiy @gmail.com pochtangizni kiriting!");
+            setEmailError("Kechirasiz, kompyuteringizdagi haqiqiy Google (@gmail.com) hisobingizni kiriting.");
             return;
         }
 
-        if (guestName && guestEmail) {
+        setGoogleFlowStep(2);
+        
+        // Simulate Google Auth Delay
+        setTimeout(() => {
             setIsGated(false);
-        }
+        }, 1500);
     };
 
     if (isGated) {
@@ -40,54 +47,77 @@ export default function GymDemoPage() {
                 {/* lock screen form */}
                 <div className="relative z-10 bg-white/10 backdrop-blur-2xl border border-white/20 p-8 sm:p-10 rounded-3xl shadow-[0_0_50px_rgba(0,0,0,0.5)] w-full max-w-md mx-4">
                     <div className="flex flex-col items-center">
-                        {/* Guest / Demo Login */}
-                        <div className="w-full flex flex-col text-center">
-                            <div className="w-16 h-16 mx-auto bg-gradient-to-br from-blue-400/20 to-purple-600/20 border border-blue-500/30 rounded-2xl flex items-center justify-center mb-4 shadow-inner transform -rotate-3 hover:rotate-0 transition-transform" style={{ width: '4rem', height: '4rem', margin: '0 auto', marginBottom: '1rem' }}>
-                                <svg className="w-8 h-8 text-blue-400 drop-shadow-[0_0_10px_rgba(96,165,250,0.8)]" style={{ width: '2rem', height: '2rem' }} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                            </div>
-                            
-                            <h2 className="text-3xl font-black text-white mb-2 tracking-tight">DEMO REJIM</h2>
-                            <p className="text-gray-400 mb-8 text-sm">Mehmon sifatida ko'zdan kechirish</p>
-                            
-                            <form onSubmit={unlockDemo} className="w-full">
-                                <div className="relative mb-6">
-                                    <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-                                    </div>
-                                    <input 
-                                        value={guestName}
-                                        onChange={(e) => setGuestName(e.target.value)}
-                                        type="text" 
-                                        placeholder="Ismingiz" 
-                                        required
-                                        style={{ paddingTop: '1rem', paddingBottom: '1rem', paddingLeft: '3rem', paddingRight: '1rem', height: '3.5rem' }}
-                                        className="w-full pl-12 pr-4 py-4 bg-black/40 border border-white/10 rounded-xl text-white text-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all placeholder-gray-500" 
-                                    />
-                                </div>
-
-                                <div className="relative mb-8">
-                                    <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                                    </div>
-                                    <input 
-                                        value={guestEmail}
-                                        onChange={(e) => { setGuestEmail(e.target.value); setEmailError(''); }}
-                                        type="email" 
-                                        placeholder="Email manzilingiz" 
-                                        required
-                                        style={{ paddingTop: '1rem', paddingBottom: '1rem', paddingLeft: '3rem', paddingRight: '1rem', height: '3.5rem' }}
-                                        className={`w-full pl-12 pr-4 py-4 bg-black/40 border ${emailError ? 'border-red-500 focus:border-red-500 focus:ring-red-500/50' : 'border-white/10 focus:border-purple-500 focus:ring-purple-500/50'} rounded-xl text-white text-lg focus:outline-none focus:ring-2 transition-all placeholder-gray-500`} 
-                                    />
-                                    {emailError && (
-                                        <p className="text-red-400 text-sm mt-2 font-medium text-left">{emailError}</p>
-                                    )}
-                                </div>
-
-                                <button type="submit" style={{ height: '3.5rem', paddingTop: '1rem', paddingBottom: '1rem' }} className="w-full py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 active:scale-[0.98] text-white font-bold rounded-xl shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] transition-all flex items-center justify-center gap-2">
-                                    <span>Ko'zdan kechirish</span>
-                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                        <div className="w-16 h-16 mx-auto bg-gradient-to-br from-blue-400/20 to-purple-600/20 border border-blue-500/30 rounded-2xl flex items-center justify-center mb-4 shadow-inner transform -rotate-3 hover:rotate-0 transition-transform">
+                            <svg className="w-8 h-8 text-blue-400 drop-shadow-[0_0_10px_rgba(96,165,250,0.8)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        </div>
+                        
+                        <h2 className="text-3xl font-black text-white mb-2 tracking-tight">DEMO REJIM</h2>
+                        <p className="text-gray-400 mb-8 text-sm text-center">Xavfsizlikni ta'minlash uchun tizimga Google orqali kiring</p>
+                        
+                        <div className="w-full">
+                            {googleFlowStep === 0 && (
+                                <button onClick={startGoogleAuth} className="w-full py-3.5 px-4 bg-white hover:bg-gray-100 text-gray-800 font-bold rounded-xl shadow-lg transition-all flex items-center justify-center gap-3">
+                                    <svg className="w-6 h-6" viewBox="0 0 48 48">
+                                        <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.7 17.74 9.5 24 9.5z"></path>
+                                        <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path>
+                                        <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path>
+                                        <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path>
+                                    </svg>
+                                    <span>Google orqali kirish</span>
                                 </button>
-                            </form>
+                            )}
+
+                            {googleFlowStep === 1 && (
+                                <form onSubmit={handleGoogleEmailSubmit} className="w-full animate-fade-in text-left">
+                                    <div className="bg-white rounded-2xl p-6 shadow-xl relative">
+                                        <div className="flex justify-center mb-4">
+                                            <svg className="w-10 h-10" viewBox="0 0 48 48">
+                                                <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.7 17.74 9.5 24 9.5z"></path>
+                                                <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path>
+                                                <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path>
+                                                <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path>
+                                            </svg>
+                                        </div>
+                                        <h3 className="text-center text-xl text-gray-900 mb-1">Kirish</h3>
+                                        <p className="text-center text-sm text-gray-600 mb-6">Google hisobingizdan foydalaning</p>
+                                        
+                                        <div className="relative mb-2">
+                                            <input 
+                                                autoFocus
+                                                value={guestEmail}
+                                                onChange={(e) => { setGuestEmail(e.target.value); setEmailError(''); }}
+                                                type="email" 
+                                                required
+                                                placeholder="Email yoki telefon"
+                                                className={`w-full px-4 py-3 bg-white border ${emailError ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20' : 'border-gray-300 focus:border-blue-500 focus:ring-blue-500/20'} rounded-md text-gray-900 text-md focus:outline-none focus:ring-4 transition-all`} 
+                                            />
+                                        </div>
+                                        {emailError && (
+                                            <p className="text-red-600 text-xs mt-1 mb-4 flex items-center gap-1">
+                                                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd"></path></svg>
+                                                {emailError}
+                                            </p>
+                                        )}
+
+                                        <div className="mt-8 flex justify-between items-center">
+                                            <button type="button" onClick={() => setGoogleFlowStep(0)} className="text-blue-600 hover:bg-blue-50 px-2 py-1.5 rounded text-sm font-medium transition-colors">
+                                                Orqaga
+                                            </button>
+                                            <button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded text-sm font-medium transition-colors">
+                                                Keyingisi
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            )}
+
+                            {googleFlowStep === 2 && (
+                                <div className="w-full bg-white rounded-2xl p-8 shadow-xl flex flex-col items-center justify-center animate-fade-in min-h-[250px]">
+                                    <div className="w-12 h-12 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mb-4"></div>
+                                    <p className="text-gray-700 font-medium text-lg text-center">Google bilan bog'lanmoqda...</p>
+                                    <p className="text-gray-500 text-sm text-center mt-2">Tasdiqlanmoqda: {guestEmail}</p>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>
