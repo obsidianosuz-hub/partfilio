@@ -389,7 +389,7 @@ export default function ProjectForm({ initialData = {}, isEdit = false }: { init
             + Add Achievement
           </button>
         </div>
-        {achievements[activeTab].map((ach, idx) => (
+        {achievements[activeTab].map((ach: string, idx: number) => (
           <div key={idx} className="flex gap-2">
             <input 
               type="text" 
