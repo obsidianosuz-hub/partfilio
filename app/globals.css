@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@source "../app";
+@source "./";
 
 :root {
   --bg-primary: #000000;
