@@ -1,0 +1,88 @@
+{
+  "Navigation": {
+    "about": "About",
+    "expertise": "Expertise",
+    "projects": "Projects",
+    "testimonials": "Testimonials",
+    "contact": "Contact"
+  },
+  "Hero": {
+    "tag": "Senior Full-Stack Developer",
+    "title1": "Systems Architect building resilient, high-throughput systems that ",
+    "title_highlight": "scale.",
+    "subtitle": "Architecting enterprise ecosystems from thousands to millions of users. Specialized in distributed systems, performance optimization, and building teams that deliver.",
+    "btn_primary": "Start a Conversation",
+    "btn_secondary": "View Enterprise Projects",
+    "metrics": {
+      "years": "Years Experience",
+      "uptime": "Uptime Delivered",
+      "users": "Users Served",
+      "requests": "Daily Requests"
+    }
+  },
+  "About": {
+    "tag": "01. Profile",
+    "title": "Professional Biography",
+    "bio1": "Senior full-stack developer with 9+ years architecting large-scale enterprise systems across fintech, logistics, and e-commerce. Specialized in distributed systems design, technical leadership, and scaling platforms to serve millions of concurrent users without sacrificing reliability.",
+    "bio2": "Led engineering teams of up to 18 through complex migrations, from legacy monoliths to fully event-driven microservice ecosystems. Believes great architecture is judged by how boring production feels — no surprises, no fire drills, just consistent, measurable performance.",
+    "projects_title": "My Open Source / Personal Projects",
+    "projects_desc": "You can add your GitHub repositories, personal side-projects, or links here.",
+    "add_project": "+ Add Project Link",
+    "expertise": {
+      "arch_title": "Enterprise System Architecture",
+      "arch_desc": "Designing scalable, resilient microservice ecosystems",
+      "lead_title": "Technical Team Leadership",
+      "lead_desc": "Mentoring engineers & establishing engineering standards",
+      "perf_title": "Performance Optimization",
+      "perf_desc": "Horizontal scaling & database query tuning",
+      "cloud_title": "Cloud Infrastructure & DevOps",
+      "cloud_desc": "Automated CI/CD pipelines & zero-downtime deployments"
+    }
+  },
+  "Skills": {
+    "tag": "02. Technical Arsenal",
+    "title": "Core Technologies",
+    "cat_backend": "Backend & Data",
+    "cat_frontend": "Frontend Ecosystem",
+    "cat_devops": "DevOps & Cloud"
+  },
+  "Projects": {
+    "tag": "03. Featured Work",
+    "title": "Enterprise Scale Projects",
+    "live_site": "Live Site ↗",
+    "github": "GitHub ↗",
+    "empty": "No projects published yet. Check back soon."
+  },
+  "Testimonials": {
+    "tag": "04. Endorsements",
+    "title": "Leadership Impact",
+    "quote1": "\"Exceptional architect. Single-handedly transformed our infrastructure. His decisions saved us millions and put us years ahead of competitors.\"",
+    "quote2": "\"Aziz is the rare engineer who thinks in systems and speaks in business impact. Our payments platform has never been more reliable.\"",
+    "quote3": "\"He rebuilt our tracking platform from the ground up and turned our worst support metric into our best customer-satisfaction driver.\"",
+    "team_title": "Team Building & Mentorship",
+    "team_desc": "Led an 18-person engineering org across three sub-teams. Mentored 7+ junior and mid-level developers, 4 of whom advanced to senior roles within 18 months. Built the internal code-review standard now used company-wide.",
+    "internal_metrics": "Internal Metrics"
+  },
+  "Contact": {
+    "tag": "Status: Available for select engagements",
+    "title": "Let's Build Something Great",
+    "desc": "Currently open to discussing architecture consulting, technical leadership roles, or complex enterprise scaling challenges.",
+    "btn": "Email shohjaxon@gmail.com"
+  },
+  "Footer": {
+    "copyright": "© 2024 Shohjaxon Hakimov. Architected for scale.",
+    "location": "Samarqand, Uzbekistan (GMT+5)"
+  },
+  "Gate": {
+    "title": "Access Portfolio",
+    "desc": "Quick intro before you dive in — who's checking out the work?",
+    "name": "Name (optional)",
+    "name_ph": "Jane Doe",
+    "email": "Email *",
+    "email_ph": "jane@example.com",
+    "btn": "View Portfolio",
+    "btn_loading": "Submitting...",
+    "err_req": "Email is required",
+    "err_invalid": "Please enter a valid email address"
+  }
+}

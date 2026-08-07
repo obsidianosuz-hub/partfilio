@@ -1,0 +1,88 @@
+{
+  "Navigation": {
+    "about": "Men haqimda",
+    "expertise": "Ekspertiza",
+    "projects": "Loyihalar",
+    "testimonials": "Fikrlar",
+    "contact": "Aloqa"
+  },
+  "Hero": {
+    "tag": "Senior Full-Stack Dasturchi",
+    "title1": "Yuqori kuchlanishga bardoshli va kengayuvchan tizimlar quruvchi tizim arxitektori: ",
+    "title_highlight": "kengayuvchanlik.",
+    "subtitle": "Minglabdan tortib millionlab foydalanuvchilar uchun korporativ ekotizimlarni loyihalash. Taqsimlangan tizimlar, samaradorlikni oshirish va muvaffaqiyatli jamoalar qurish bo'yicha mutaxassis.",
+    "btn_primary": "Suhbatni boshlash",
+    "btn_secondary": "Loyihalarni ko'rish",
+    "metrics": {
+      "years": "Yillik tajriba",
+      "uptime": "Barqarorlik (Uptime)",
+      "users": "Foydalanuvchilar",
+      "requests": "Kunlik so'rovlar"
+    }
+  },
+  "About": {
+    "tag": "01. Profil",
+    "title": "Kasbiy Biografiya",
+    "bio1": "Fintech, logistika va e-tijorat sohalarida yirik korporativ tizimlarni loyihalash bo'yicha 9+ yillik tajribaga ega Senior full-stack dasturchi. Taqsimlangan tizimlar arxitekturasi, texnik yetakchilik va ishonchlilikni yo'qotmagan holda millionlab faol foydalanuvchilarga xizmat ko'rsatish bo'yicha ixtisoslashganman.",
+    "bio2": "Eski monolit dasturlardan to'liq voqealarga asoslangan (event-driven) mikroservis ekotizimlarigacha bo'lgan murakkab ko'chirish (migration) jarayonlarida 18 kishigacha bo'lgan muhandislar jamoasini boshqarganman. Ishonamanki, zo'r arxitektura - bu tizimning zerikarli bo'lishi bilan o'lchanadi: hech qanday syurprizlar yo'q, yong'inlar yo'q, shunchaki barqaror va o'lchanadigan unumdorlik.",
+    "projects_title": "Ochiq kodli / Shaxsiy loyihalarim",
+    "projects_desc": "Bu yerga GitHub omborlaringiz yoki shaxsiy loyihalaringizga havolalarni joylashtirishingiz mumkin.",
+    "add_project": "+ Loyiha havolasini qo'shish",
+    "expertise": {
+      "arch_title": "Korporativ tizimlar arxitekturasi",
+      "arch_desc": "Kengayuvchan va chidamli mikroservis ekotizimlarini loyihalash",
+      "lead_title": "Texnik Jamoaga Yetakchilik",
+      "lead_desc": "Dasturchilarga ustozlik qilish va muhandislik standartlarini o'rnatish",
+      "perf_title": "Samaradorlikni optimallashtirish",
+      "perf_desc": "Gorizontal kengaytirish va ma'lumotlar bazasi so'rovlarini sozlash",
+      "cloud_title": "Bulutli infratuzilma & DevOps",
+      "cloud_desc": "Avtomatlashtirilgan CI/CD va uzilishlarsiz serverga yuklash"
+    }
+  },
+  "Skills": {
+    "tag": "02. Texnik Arsenal",
+    "title": "Asosiy Texnologiyalar",
+    "cat_backend": "Backend & Ma'lumotlar",
+    "cat_frontend": "Frontend Ekotizimi",
+    "cat_devops": "DevOps & Bulut"
+  },
+  "Projects": {
+    "tag": "03. Tanlangan Ishlar",
+    "title": "Korporativ Loyihalar",
+    "live_site": "Saytga o'tish ↗",
+    "github": "GitHub ↗",
+    "empty": "Hozircha loyihalar chop etilmagan. Keyinroq tekshirib ko'ring."
+  },
+  "Testimonials": {
+    "tag": "04. Tavsiyalar",
+    "title": "Yetakchilik Ta'siri",
+    "quote1": "\"Ajoyib arxitektor. Bizning infratuzilmani bir o'zi tubdan o'zgartirdi. Uning qarorlari bizga millionlab mablag'ni tejadi va raqobatchilardan yillarga oldinga olib chiqdi.\"",
+    "quote2": "\"Aziz - tizimlar haqida o'ylaydigan va biznesga qanday ta'sir qilishini tushunadigan kamyob muhandislardan. Bizning to'lov platformamiz hech qachon bunchalik ishonchli bo'lmagan.\"",
+    "quote3": "\"U bizning logistika platformamizni boshidan qayta qurdi va bizning eng yomon yordam ko'rsatkichimizni mijozlar qoniqishining asosiy drayveriga aylantirdi.\"",
+    "team_title": "Jamoa shakllantirish va Ustozlik",
+    "team_desc": "Uchta guruhga bo'lingan 18 kishilik muhandislik tashkilotini boshqardi. 7+ junior va middle dasturchilarga ustozlik qildi, ulardan 4 tasi 18 oy ichida senior darajasiga yetdi. Hozir butun kompaniyada qo'llanilayotgan ichki code-review standartini ishlab chiqdi.",
+    "internal_metrics": "Ichki ko'rsatkichlar"
+  },
+  "Contact": {
+    "tag": "Holat: Tanlangan takliflar uchun band emas",
+    "title": "Birgalikda buyuk ishlar qilamiz",
+    "desc": "Arxitektura konsaltingi, texnik yetakchi rollari yoki murakkab korporativ miqyosdagi vazifalarni muhokama qilish uchun doim ochiqman.",
+    "btn": "shohjaxon@gmail.com ga yozish"
+  },
+  "Footer": {
+    "copyright": "© 2024 Shohjaxon Hakimov. Katta hajmlar uchun arxitektura qilingan.",
+    "location": "Samarqand, O'zbekiston (GMT+5)"
+  },
+  "Gate": {
+    "title": "Portfolioga kirish",
+    "desc": "Loyihalar bilan tanishishdan oldin qisqacha tanishuv — ishlarni kim ko'ryapti?",
+    "name": "Ism (majburiy emas)",
+    "name_ph": "Eshmat Toshmatov",
+    "email": "Email *",
+    "email_ph": "eshmat@example.com",
+    "btn": "Portfolioni ko'rish",
+    "btn_loading": "Yuborilmoqda...",
+    "err_req": "Email kiritish majburiy",
+    "err_invalid": "To'g'ri email manzilini kiriting"
+  }
+}
