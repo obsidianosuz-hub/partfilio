@@ -67,6 +67,12 @@
     "tag": "Статус: Доступен для предложений",
     "title": "Давайте создадим что-то великое",
     "desc": "Открыт для обсуждения архитектурного консалтинга, ролей технического лидера или сложных задач по масштабированию бизнеса.",
+    "form_name_label": "Имя",
+    "form_name_ph": "Иван Иванов",
+    "form_contact_label": "Контакт (Email или Telegram)",
+    "form_contact_ph": "ivan@example.com / @ivanivanov",
+    "form_message_label": "Сообщение",
+    "form_message_ph": "Напишите здесь ваше сообщение...",
     "btn": "Написать на shohjaxon@gmail.com"
   },
   "Footer": {

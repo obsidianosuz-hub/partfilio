@@ -443,29 +443,29 @@ export default function PortfolioContent({ projects = [] }: { projects?: any[] }
                     <div className="w-full flex justify-center mt-12">
                         <form onSubmit={handleContactSubmit} className="w-full max-w-xl space-y-6 text-left glass-card">
                             <div>
-                            <label className="block text-sm font-semibold text-slate-700 mb-2">Name / Ism</label>
+                            <label className="block text-sm font-semibold text-slate-700 mb-2">{t('Contact.form_name_label')}</label>
                             <input 
                                 type="text" 
                                 required
                                 value={formData.name}
                                 onChange={(e) => setFormData({...formData, name: e.target.value})}
                                 className="contact-input"
-                                placeholder="John Doe"
+                                placeholder={t('Contact.form_name_ph')}
                             />
                         </div>
                         <div>
-                            <label className="block text-sm font-semibold text-slate-700 mb-2">Contact / Aloqa (Email yoki Telegram)</label>
+                            <label className="block text-sm font-semibold text-slate-700 mb-2">{t('Contact.form_contact_label')}</label>
                             <input 
                                 type="text" 
                                 required
                                 value={formData.contactInfo}
                                 onChange={(e) => setFormData({...formData, contactInfo: e.target.value})}
                                 className="contact-input"
-                                placeholder="john@example.com / @johndoe"
+                                placeholder={t('Contact.form_contact_ph')}
                             />
                         </div>
                         <div>
-                            <label className="block text-sm font-semibold text-slate-700 mb-2">Message / Xabar</label>
+                            <label className="block text-sm font-semibold text-slate-700 mb-2">{t('Contact.form_message_label')}</label>
                             <textarea 
                                 required
                                 rows={5}
@@ -473,7 +473,7 @@ export default function PortfolioContent({ projects = [] }: { projects?: any[] }
                                 onChange={(e) => setFormData({...formData, message: e.target.value})}
                                 className="contact-input"
                                 style={{ resize: 'vertical' }}
-                                placeholder="..."
+                                placeholder={t('Contact.form_message_ph')}
                             ></textarea>
                         </div>
                         <button 

@@ -67,6 +67,12 @@
     "tag": "Holat: Tanlangan takliflar uchun band emas",
     "title": "Birgalikda buyuk ishlar qilamiz",
     "desc": "Arxitektura konsaltingi, texnik yetakchi rollari yoki murakkab korporativ miqyosdagi vazifalarni muhokama qilish uchun doim ochiqman.",
+    "form_name_label": "Name / Ism",
+    "form_name_ph": "Eshmat Toshmatov",
+    "form_contact_label": "Contact / Aloqa (Email yoki Telegram)",
+    "form_contact_ph": "eshmat@example.com / @eshmat",
+    "form_message_label": "Message / Xabar",
+    "form_message_ph": "Xabaringizni yozing...",
     "btn": "shohjaxon@gmail.com ga yozish"
   },
   "Footer": {

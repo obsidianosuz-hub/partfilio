@@ -67,6 +67,12 @@
     "tag": "Status: Available for select engagements",
     "title": "Let's Build Something Great",
     "desc": "Currently open to discussing architecture consulting, technical leadership roles, or complex enterprise scaling challenges.",
+    "form_name_label": "Name",
+    "form_name_ph": "John Doe",
+    "form_contact_label": "Contact (Email or Telegram)",
+    "form_contact_ph": "john@example.com / @johndoe",
+    "form_message_label": "Message",
+    "form_message_ph": "Type your message here...",
     "btn": "Email shohjaxon@gmail.com"
   },
   "Footer": {
