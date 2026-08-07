@@ -45,19 +45,19 @@ export default function GymDemoPage() {
                 </div>
 
                 {/* lock screen form */}
-                <div className="relative z-10 bg-white/10 backdrop-blur-2xl border border-white/20 p-8 sm:p-10 rounded-3xl shadow-[0_0_50px_rgba(0,0,0,0.5)] w-full max-w-md mx-4">
+                <div className="relative z-10 bg-white/10 backdrop-blur-2xl border border-white/20 p-10 sm:p-14 rounded-xl shadow-[0_0_50px_rgba(0,0,0,0.5)] w-full max-w-xl mx-4">
                     <div className="flex flex-col items-center">
-                        <div className="w-16 h-16 mx-auto bg-gradient-to-br from-blue-400/20 to-purple-600/20 border border-blue-500/30 rounded-2xl flex items-center justify-center mb-4 shadow-inner transform -rotate-3 hover:rotate-0 transition-transform">
-                            <svg className="w-8 h-8 text-blue-400 drop-shadow-[0_0_10px_rgba(96,165,250,0.8)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        <div className="w-24 h-24 mx-auto bg-gradient-to-br from-blue-400/20 to-purple-600/20 border border-blue-500/30 rounded-lg flex items-center justify-center mb-6 shadow-inner transform -rotate-3 hover:rotate-0 transition-transform">
+                            <svg className="w-12 h-12 text-blue-400 drop-shadow-[0_0_10px_rgba(96,165,250,0.8)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
                         </div>
                         
-                        <h2 className="text-3xl font-black text-white mb-2 tracking-tight">DEMO REJIM</h2>
-                        <p className="text-gray-400 mb-8 text-sm text-center">Xavfsizlikni ta'minlash uchun tizimga Google orqali kiring</p>
+                        <h2 className="text-4xl font-black text-white mb-3 tracking-tight">DEMO REJIM</h2>
+                        <p className="text-gray-300 mb-10 text-base text-center">Xavfsizlikni ta'minlash uchun tizimga Google orqali kiring</p>
                         
                         <div className="w-full">
                             {googleFlowStep === 0 && (
-                                <button onClick={startGoogleAuth} className="w-full py-3.5 px-4 bg-white hover:bg-gray-100 text-gray-800 font-bold rounded-xl shadow-lg transition-all flex items-center justify-center gap-3">
-                                    <svg className="w-6 h-6" viewBox="0 0 48 48">
+                                <button onClick={startGoogleAuth} className="w-full py-5 px-6 bg-white hover:bg-gray-100 text-gray-800 font-bold text-xl rounded-md shadow-lg transition-all flex items-center justify-center gap-4">
+                                    <svg className="w-8 h-8" viewBox="0 0 48 48">
                                         <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.7 17.74 9.5 24 9.5z"></path>
                                         <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path>
                                         <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path>
