@@ -440,8 +440,9 @@ export default function PortfolioContent({ projects = [] }: { projects?: any[] }
                     <h2>{t('Contact.title')}</h2>
                     <p>{t('Contact.desc')}</p>
                     
-                    <form onSubmit={handleContactSubmit} className="mt-12 space-y-6 max-w-xl mx-auto text-left glass-card">
-                        <div>
+                    <div className="w-full flex justify-center mt-12">
+                        <form onSubmit={handleContactSubmit} className="w-full max-w-xl space-y-6 text-left glass-card">
+                            <div>
                             <label className="block text-sm font-semibold text-slate-700 mb-2">Name / Ism</label>
                             <input 
                                 type="text" 
@@ -482,7 +483,8 @@ export default function PortfolioContent({ projects = [] }: { projects?: any[] }
                         >
                             {formStatus === 'loading' ? 'Sending...' : formStatus === 'success' ? '✓ Sent Successfully!' : formStatus === 'error' ? '✕ Failed to send' : t('Contact.btn')}
                         </button>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
