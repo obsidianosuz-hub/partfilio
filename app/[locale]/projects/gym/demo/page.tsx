@@ -8,9 +8,20 @@ export default function GymDemoPage() {
     const [isGated, setIsGated] = useState(true);
     const [guestName, setGuestName] = useState('');
     const [guestEmail, setGuestEmail] = useState('');
+    const [emailError, setEmailError] = useState('');
 
     const unlockDemo = (e: React.FormEvent) => {
         e.preventDefault();
+        setEmailError('');
+        
+        // Gmail validation
+        const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/i;
+        
+        if (!guestEmail.match(gmailRegex)) {
+            setEmailError("Faqat haqiqiy @gmail.com pochtangizni kiriting!");
+            return;
+        }
+
         if (guestName && guestEmail) {
             setIsGated(false);
         }
@@ -60,13 +71,16 @@ export default function GymDemoPage() {
                                     </div>
                                     <input 
                                         value={guestEmail}
-                                        onChange={(e) => setGuestEmail(e.target.value)}
+                                        onChange={(e) => { setGuestEmail(e.target.value); setEmailError(''); }}
                                         type="email" 
                                         placeholder="Email manzilingiz" 
                                         required
                                         style={{ paddingTop: '1rem', paddingBottom: '1rem', paddingLeft: '3rem', paddingRight: '1rem', height: '3.5rem' }}
-                                        className="w-full pl-12 pr-4 py-4 bg-black/40 border border-white/10 rounded-xl text-white text-lg focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/50 transition-all placeholder-gray-500" 
+                                        className={`w-full pl-12 pr-4 py-4 bg-black/40 border ${emailError ? 'border-red-500 focus:border-red-500 focus:ring-red-500/50' : 'border-white/10 focus:border-purple-500 focus:ring-purple-500/50'} rounded-xl text-white text-lg focus:outline-none focus:ring-2 transition-all placeholder-gray-500`} 
                                     />
+                                    {emailError && (
+                                        <p className="text-red-400 text-sm mt-2 font-medium text-left">{emailError}</p>
+                                    )}
                                 </div>
 
                                 <button type="submit" style={{ height: '3.5rem', paddingTop: '1rem', paddingBottom: '1rem' }} className="w-full py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 active:scale-[0.98] text-white font-bold rounded-xl shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] transition-all flex items-center justify-center gap-2">
