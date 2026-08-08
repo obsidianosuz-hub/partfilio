@@ -211,11 +211,13 @@ nav {
 .blob-2 {
   bottom: -20%;
   right: -10%;
-  width: 600px;
-  height: 600px;
+  width: 500px;
+  height: 500px;
   background: linear-gradient(135deg, rgba(192, 132, 252, 0.5), rgba(126, 34, 206, 0.5));
   animation: float-complex-2 30s infinite alternate ease-in-out;
   animation-delay: -5s;
+  border-radius: 40px; /* Make it a rounded square */
+  filter: blur(60px); /* Less blur so the square shape is visible */
 }
 
 .blob-3 {
@@ -624,10 +626,10 @@ footer {
 }
 
 @keyframes float-complex-2 {
-  0% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(-200px, -150px) scale(1.3); }
-  66% { transform: translate(-100px, -300px) scale(0.8); }
-  100% { transform: translate(0, 0) scale(1); }
+  0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  33% { transform: translate(-200px, -150px) scale(1.3) rotate(90deg); }
+  66% { transform: translate(-100px, -300px) scale(0.8) rotate(180deg); }
+  100% { transform: translate(0, 0) scale(1) rotate(270deg); }
 }
 
 @keyframes float-complex-3 {
