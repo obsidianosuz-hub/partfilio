@@ -211,18 +211,6 @@ export default function PortfolioContent({ projects = [] }: { projects?: any[] }
                 <div>
                     <p className="about-bio">{t('About.bio1')}</p>
                     <p className="about-bio">{t('About.bio2')}</p>
-
-                    <div style={{ marginTop: '32px', padding: '24px', background: 'rgba(15, 23, 42, 0.4)', backdropFilter: 'blur(10px)', border: '1px dashed rgba(6, 182, 212, 0.3)', borderRadius: '12px' }}>
-                        <h4 style={{ color: 'var(--accent-cyan)', marginBottom: '8px', fontSize: '18px' }}>{t('About.projects_title')}</h4>
-                        <p style={{ fontSize: '14px', color: 'var(--text-tertiary)', marginBottom: '16px' }}>{t('About.projects_desc')}</p>
-                        <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                            <li>
-                                <a href="#" style={{ color: 'var(--text-primary)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                    <span style={{ color: 'var(--accent-cyan)' }}>→</span> {t('About.add_project')}
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
                 <div>
                     <ul className="expertise-list">
