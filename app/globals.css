@@ -846,6 +846,46 @@ footer {
   transition: none !important;
 }
 
+/* Project Buttons */
+.project-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 20px 24px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.project-btn:hover {
+  transform: translateY(-4px);
+}
+
+.btn-github {
+  background-color: #0f172a;
+  color: white;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-github:hover {
+  background-color: #1e293b;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.btn-demo {
+  background: linear-gradient(to right, #2563eb, #4f46e5);
+  color: white;
+  box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
+}
+
+.btn-demo:hover {
+  background: linear-gradient(to right, #3b82f6, #6366f1);
+  box-shadow: 0 0 35px rgba(79, 70, 229, 0.6);
+}
+
 /* Responsive */
 @media (max-width: 1200px) {
   h1 { font-size: 48px; }
