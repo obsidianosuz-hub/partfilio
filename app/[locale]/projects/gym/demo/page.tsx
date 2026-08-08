@@ -46,6 +46,10 @@ export default function GymDemoPage() {
 
                 {/* lock screen form */}
                 <div className="relative z-10 bg-white/10 backdrop-blur-2xl border border-white/20 p-10 sm:p-14 rounded-xl shadow-[0_0_50px_rgba(0,0,0,0.5)] w-full max-w-xl mx-4">
+                    <button onClick={() => window.history.back()} className="absolute top-4 left-4 p-2 text-gray-400 hover:text-white hover:bg-white/10 rounded-lg transition-colors flex items-center gap-2 group">
+                        <svg className="w-5 h-5 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                        <span className="text-sm font-medium">Orqaga</span>
+                    </button>
                     <div className="flex flex-col items-center">
                         <div className="w-24 h-24 mx-auto bg-gradient-to-br from-blue-400/20 to-purple-600/20 border border-blue-500/30 rounded-lg flex items-center justify-center mb-6 shadow-inner transform -rotate-3 hover:rotate-0 transition-transform">
                             <svg className="w-12 h-12 text-blue-400 drop-shadow-[0_0_10px_rgba(96,165,250,0.8)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
