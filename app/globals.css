@@ -164,10 +164,12 @@ section {
 
 /* Utilities */
 .text-gradient {
-  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple), var(--accent-pink));
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple), var(--accent-pink), var(--accent-cyan));
+  background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: gradient-shift 5s ease infinite;
 }
 
 .glass-card {
@@ -350,6 +352,11 @@ nav.nav-scrolled {
   align-items: center;
   padding-top: 80px;
   position: relative;
+}
+
+.hero h1 {
+  display: inline-block;
+  animation: float-text 6s ease-in-out infinite;
 }
 
 .hero-content {
@@ -706,6 +713,18 @@ footer {
 }
 
 /* Animations */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float-text {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
 @keyframes float {
   0% { transform: translate(0, 0) scale(1); }
   100% { transform: translate(40px, -40px) scale(1.1); }
