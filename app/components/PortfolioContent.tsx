@@ -58,6 +58,14 @@ export default function PortfolioContent({ projects = [] }: { projects?: any[] }
   };
 
   useEffect(() => {
+    // Check if animations already ran in this session
+    const hasAnimated = sessionStorage.getItem('hasAnimated');
+    if (hasAnimated) {
+        document.body.classList.add('animations-done');
+    } else {
+        sessionStorage.setItem('hasAnimated', 'true');
+    }
+
     // Intersection Observer for scroll animations
     const observerOptions = {
         root: null,

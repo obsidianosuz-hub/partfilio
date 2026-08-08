@@ -34,6 +34,17 @@ export default async function RootLayout({
   return (
     <html lang={locale} className="scroll-smooth">
       <body className={`${outfit.variable} ${jetbrainsMono.variable}`}>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                if (localStorage.getItem('theme') === 'light') {
+                  document.body.classList.add('theme-light');
+                }
+              } catch (e) {}
+            `,
+          }}
+        />
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

@@ -743,6 +743,12 @@ footer {
   transform: translateY(0);
 }
 
+.animations-done .fade-in-up {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: none !important;
+}
+
 /* Responsive */
 @media (max-width: 1200px) {
   h1 { font-size: 48px; }
