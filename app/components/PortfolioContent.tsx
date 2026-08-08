@@ -11,6 +11,14 @@ export default function PortfolioContent({ projects = [] }: { projects?: any[] }
   const t = useTranslations();
   const locale = useLocale();
 
+  // Load theme from localStorage on mount
+  useEffect(() => {
+      const savedTheme = localStorage.getItem('theme') as 'dark' | 'light';
+      if (savedTheme) {
+          setTheme(savedTheme);
+      }
+  }, []);
+
   const getL = (field: any) => {
     if (typeof field === 'string') return field;
     if (!field) return '';
@@ -92,8 +100,10 @@ export default function PortfolioContent({ projects = [] }: { projects?: any[] }
   useEffect(() => {
     if (theme === 'light') {
         document.body.classList.add('theme-light');
+        localStorage.setItem('theme', 'light');
     } else {
         document.body.classList.remove('theme-light');
+        localStorage.setItem('theme', 'dark');
     }
   }, [theme]);
 
@@ -125,9 +135,13 @@ export default function PortfolioContent({ projects = [] }: { projects?: any[] }
                 <a href="#testimonials" onClick={() => setIsMenuOpen(false)}>{t('Navigation.testimonials')}</a>
                 <a href="#contact" onClick={() => setIsMenuOpen(false)}>{t('Navigation.contact')}</a>
                 <LanguageSwitcher />
-                <div className="flex items-center gap-2 border-l border-slate-700 pl-4 ml-2">
-                    <button onClick={() => setTheme('light')} className={`w-5 h-5 rounded-sm border border-slate-400 bg-white shadow-sm ${theme === 'light' ? 'ring-2 ring-cyan-400 ring-offset-2 ring-offset-black' : ''}`} aria-label="Light Theme"></button>
-                    <button onClick={() => setTheme('dark')} className={`w-5 h-5 rounded-sm border border-slate-600 bg-black shadow-sm ${theme === 'dark' ? 'ring-2 ring-cyan-400 ring-offset-2 ring-offset-black' : ''}`} aria-label="Dark Theme"></button>
+                <div className="flex items-center gap-1 border-l border-slate-700 pl-4 ml-2">
+                    <button onClick={() => setTheme('light')} className={`p-1.5 rounded-md hover:bg-slate-800 transition-colors ${theme === 'light' ? 'text-yellow-400 bg-slate-800' : 'text-slate-400'}`} aria-label="Light Theme">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </button>
+                    <button onClick={() => setTheme('dark')} className={`p-1.5 rounded-md hover:bg-slate-800 transition-colors ${theme === 'dark' ? 'text-blue-400 bg-slate-800' : 'text-slate-400'}`} aria-label="Dark Theme">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
                 </div>
             </div>
         </div>
