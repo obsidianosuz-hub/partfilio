@@ -60,6 +60,27 @@
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+/* Light mode overrides for project buttons */
+.theme-light .btn-github {
+  background-color: #f8fafc;
+  color: #0f172a;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.theme-light .btn-github:hover {
+  background-color: #f1f5f9;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.theme-light .btn-demo {
+  box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.2);
+}
+
+.theme-light .btn-demo:hover {
+  box-shadow: 0 15px 25px -5px rgba(79, 70, 229, 0.3);
+}
+
 .theme-light .btn-secondary {
   background: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.1);
