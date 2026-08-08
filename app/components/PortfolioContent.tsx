@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, FormEvent } from 'react';
+import { useEffect, useState, FormEvent, useRef } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import LanguageSwitcher from './LanguageSwitcher';
 import { Link } from '@/i18n/routing';
@@ -8,6 +8,7 @@ import { Link } from '@/i18n/routing';
 export default function PortfolioContent({ projects = [] }: { projects?: any[] }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+  const isMounted = useRef(false);
   const t = useTranslations();
   const locale = useLocale();
 
@@ -17,6 +18,7 @@ export default function PortfolioContent({ projects = [] }: { projects?: any[] }
       if (savedTheme) {
           setTheme(savedTheme);
       }
+      isMounted.current = true;
   }, []);
 
   const getL = (field: any) => {
@@ -106,6 +108,7 @@ export default function PortfolioContent({ projects = [] }: { projects?: any[] }
   }, []);
 
   useEffect(() => {
+    if (!isMounted.current) return;
     if (theme === 'light') {
         document.body.classList.add('theme-light');
         localStorage.setItem('theme', 'light');
