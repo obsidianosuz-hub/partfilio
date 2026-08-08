@@ -7,6 +7,7 @@ import { Link } from '@/i18n/routing';
 
 export default function PortfolioContent({ projects = [] }: { projects?: any[] }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
   const t = useTranslations();
   const locale = useLocale();
 
@@ -75,11 +76,9 @@ export default function PortfolioContent({ projects = [] }: { projects?: any[] }
     const handleScroll = () => {
         if (!nav) return;
         if (window.scrollY > 50) {
-            nav.style.background = 'rgba(10, 10, 10, 0.95)';
-            nav.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
+            nav.classList.add('nav-scrolled');
         } else {
-            nav.style.background = 'rgba(0, 0, 0, 0.7)';
-            nav.style.boxShadow = 'none';
+            nav.classList.remove('nav-scrolled');
         }
     };
     
@@ -92,7 +91,7 @@ export default function PortfolioContent({ projects = [] }: { projects?: any[] }
 
   return (
     <>
-      <main className="min-h-screen relative overflow-hidden">
+      <main className={`min-h-screen relative overflow-hidden ${theme === 'light' ? 'theme-light' : ''}`}>
         {/* Global Background Blobs */}
         <div className="global-bg-blobs">
           <div className="blob blob-1"></div>
@@ -118,6 +117,10 @@ export default function PortfolioContent({ projects = [] }: { projects?: any[] }
                 <a href="#testimonials" onClick={() => setIsMenuOpen(false)}>{t('Navigation.testimonials')}</a>
                 <a href="#contact" onClick={() => setIsMenuOpen(false)}>{t('Navigation.contact')}</a>
                 <LanguageSwitcher />
+                <div className="flex items-center gap-2 border-l border-slate-700 pl-4 ml-2">
+                    <button onClick={() => setTheme('light')} className={`w-5 h-5 rounded-sm border border-slate-400 bg-white shadow-sm ${theme === 'light' ? 'ring-2 ring-cyan-400 ring-offset-2 ring-offset-black' : ''}`} aria-label="Light Theme"></button>
+                    <button onClick={() => setTheme('dark')} className={`w-5 h-5 rounded-sm border border-slate-600 bg-black shadow-sm ${theme === 'dark' ? 'ring-2 ring-cyan-400 ring-offset-2 ring-offset-black' : ''}`} aria-label="Dark Theme"></button>
+                </div>
             </div>
         </div>
       </nav>
