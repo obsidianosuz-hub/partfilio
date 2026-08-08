@@ -89,9 +89,17 @@ export default function PortfolioContent({ projects = [] }: { projects?: any[] }
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (theme === 'light') {
+        document.body.classList.add('theme-light');
+    } else {
+        document.body.classList.remove('theme-light');
+    }
+  }, [theme]);
+
   return (
     <>
-      <main className={`min-h-screen relative overflow-hidden ${theme === 'light' ? 'theme-light' : ''}`}>
+      <main className="min-h-screen relative overflow-hidden">
         {/* Global Background Blobs */}
         <div className="global-bg-blobs">
           <div className="blob blob-1"></div>
