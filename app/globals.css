@@ -189,73 +189,62 @@ nav {
   height: 100vh;
   overflow: hidden;
   z-index: -1;
-  opacity: 0.8;
+  opacity: 0.6; /* Lower opacity for ambient effect */
 }
 
 .blob {
   position: absolute;
-  filter: blur(4px);
+  filter: blur(120px); /* Massive blur for realistic ambient light */
   border-radius: 50%;
-  animation: float 20s infinite alternate ease-in-out;
+  mix-blend-screen: screen;
 }
 
 .blob-1 {
-  top: 15%;
-  left: 15%;
-  width: 120px;
-  height: 120px;
-  background: linear-gradient(135deg, #3b82f6, #4338ca);
-  box-shadow: 0 0 50px rgba(59, 130, 246, 0.8);
-  animation-duration: 15s;
+  top: -10%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.6), rgba(67, 56, 202, 0.6));
+  animation: float-complex-1 25s infinite alternate ease-in-out;
 }
 
 .blob-2 {
-  bottom: 20%;
-  right: 15%;
-  width: 180px;
-  height: 180px;
-  background: linear-gradient(135deg, #c084fc, #7e22ce);
-  box-shadow: 0 0 60px rgba(168, 85, 247, 0.7);
-  animation-duration: 25s;
+  bottom: -20%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: linear-gradient(135deg, rgba(192, 132, 252, 0.5), rgba(126, 34, 206, 0.5));
+  animation: float-complex-2 30s infinite alternate ease-in-out;
   animation-delay: -5s;
 }
 
 .blob-3 {
   top: 40%;
-  left: 60%;
-  width: 90px;
-  height: 90px;
-  background: linear-gradient(135deg, #34d399, #059669);
-  box-shadow: 0 0 40px rgba(16, 185, 129, 0.8);
-  animation-duration: 18s;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, rgba(52, 211, 153, 0.4), rgba(5, 150, 105, 0.4));
+  animation: float-complex-3 22s infinite alternate ease-in-out;
   animation-delay: -10s;
 }
 
 .blob-4 {
-  top: -5%;
-  left: 45%;
-  width: 150px;
-  height: 150px;
-  background: linear-gradient(135deg, #67e8f9, #0284c7);
-  box-shadow: 0 0 50px rgba(6, 182, 212, 0.7);
-  border-radius: 50%;
-  position: absolute;
-  filter: blur(4px);
-  animation: float 22s infinite alternate ease-in-out;
+  top: 10%;
+  right: 20%;
+  width: 450px;
+  height: 450px;
+  background: linear-gradient(135deg, rgba(103, 232, 249, 0.5), rgba(2, 132, 199, 0.5));
+  animation: float-complex-1 28s infinite alternate-reverse ease-in-out;
   animation-delay: -7s;
 }
 
 .blob-5 {
-  bottom: 10%;
+  bottom: 20%;
   left: 10%;
-  width: 70px;
-  height: 70px;
-  background: linear-gradient(135deg, #f472b6, #e11d48);
-  box-shadow: 0 0 30px rgba(236, 72, 153, 0.9);
-  border-radius: 50%;
-  position: absolute;
-  filter: blur(3px);
-  animation: float 16s infinite alternate ease-in-out;
+  width: 350px;
+  height: 350px;
+  background: linear-gradient(135deg, rgba(244, 114, 182, 0.4), rgba(225, 29, 72, 0.4));
+  animation: float-complex-2 20s infinite alternate-reverse ease-in-out;
   animation-delay: -3s;
 }
 
@@ -625,6 +614,27 @@ footer {
 @keyframes float {
   0% { transform: translate(0, 0) scale(1); }
   100% { transform: translate(40px, -40px) scale(1.1); }
+}
+
+@keyframes float-complex-1 {
+  0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  33% { transform: translate(150px, 100px) scale(1.2) rotate(45deg); }
+  66% { transform: translate(50px, 200px) scale(0.9) rotate(90deg); }
+  100% { transform: translate(0, 0) scale(1) rotate(180deg); }
+}
+
+@keyframes float-complex-2 {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-200px, -150px) scale(1.3); }
+  66% { transform: translate(-100px, -300px) scale(0.8); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes float-complex-3 {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(100px, -200px) scale(1.1); }
+  66% { transform: translate(-150px, -100px) scale(1.4); }
+  100% { transform: translate(0, 0) scale(1); }
 }
 
 .fade-in-up {
