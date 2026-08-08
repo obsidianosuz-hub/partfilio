@@ -13,16 +13,12 @@ export default function LanguageSwitcher() {
   };
 
   return (
-    <div className="flex gap-4 text-sm font-semibold items-center bg-slate-900/50 px-3 py-2 rounded-full border border-white/10 shadow-inner">
+    <div className="lang-switcher">
       {['en', 'ru', 'uz'].map((l) => (
         <button
           key={l}
           onClick={() => handleLanguageChange(l)}
-          className={`transition-all uppercase tracking-wider px-2 py-1 rounded-md ${
-            locale === l 
-              ? 'text-cyan-400 bg-slate-800 shadow-sm font-bold' 
-              : 'text-slate-400 hover:text-white'
-          }`}
+          className={`lang-btn ${locale === l ? 'active' : ''}`}
         >
           {l}
         </button>
