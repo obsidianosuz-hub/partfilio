@@ -161,10 +161,6 @@ export default function PortfolioContent({ projects = [] }: { projects?: any[] }
       <main>
         {/* Hero Section */}
         <section className="hero" id="home">
-            <div className="hero-bg-blobs">
-                <div className="blob blob-1"></div>
-                <div className="blob blob-2"></div>
-            </div>
             <div className="container">
                 <div className="hero-content">
                     <span className="section-tag fade-in-up" style={{transitionDelay: '0.1s'}}>{t('Hero.tag')}</span>
