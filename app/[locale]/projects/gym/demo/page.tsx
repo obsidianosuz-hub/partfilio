@@ -1,9 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { Link } from '@/i18n/routing';
+import { Link, useRouter } from '@/i18n/routing';
 
 export default function GymDemoPage() {
+    const router = useRouter();
     const [activeTab, setActiveTab] = useState('Bosh Sahifa');
     const [isGated, setIsGated] = useState(true);
     const [googleFlowStep, setGoogleFlowStep] = useState(0); // 0: button, 1: enter email, 2: connecting
@@ -46,7 +47,7 @@ export default function GymDemoPage() {
 
                 {/* lock screen form */}
                 <div className="relative z-10 bg-white/10 backdrop-blur-2xl border border-white/20 p-10 sm:p-14 rounded-xl shadow-[0_0_50px_rgba(0,0,0,0.5)] w-full max-w-xl mx-4">
-                    <button onClick={() => window.history.back()} className="absolute top-4 left-4 p-2 text-gray-400 hover:text-white hover:bg-white/10 rounded-lg transition-colors flex items-center gap-2 group">
+                    <button onClick={() => router.push('/')} className="absolute top-4 left-4 p-2 text-gray-400 hover:text-white hover:bg-white/10 rounded-lg transition-colors flex items-center gap-2 group">
                         <svg className="w-5 h-5 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                         <span className="text-sm font-medium">Orqaga</span>
                     </button>
@@ -618,7 +619,7 @@ export default function GymDemoPage() {
                                 <p className="text-cyan-400 text-xs font-black tracking-widest uppercase mt-1">Administrator</p>
                             </div>
                         </div>
-                        <button className="w-full flex items-center justify-center gap-2 px-5 py-4 rounded-2xl border border-red-500/40 bg-red-500/10 text-red-400 hover:bg-red-500/20 hover:border-red-500/60 transition-all text-sm font-bold shadow-[0_0_15px_rgba(239,68,68,0.15)]">
+                        <button onClick={() => router.push('/')} className="w-full flex items-center justify-center gap-2 px-5 py-4 rounded-2xl border border-red-500/40 bg-red-500/10 text-red-400 hover:bg-red-500/20 hover:border-red-500/60 transition-all text-sm font-bold shadow-[0_0_15px_rgba(239,68,68,0.15)]">
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
                             Tizimdan chiqish
                         </button>
